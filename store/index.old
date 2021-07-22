@@ -1,0 +1,31 @@
+import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators";
+import { client_info } from "~/interfaces/client_info";
+import axios from "axios";
+import { BASE_API_URL } from "~/config";
+
+// @Module({
+//   name: "store",
+//   stateFactory: true,
+//   namespaced: false,
+// })
+
+@Module({stateFactory: true})
+export default class extends VuexModule {
+  client_info: client_info = {
+      user: {
+        username: "Unknown"
+      }
+  }
+
+  @Mutation
+  set_client_info(data: client_info) {
+      this.client_info = data;
+  }
+
+  @Action
+  async fetch_client_info() {
+    let res = await axios.get(`${BASE_API_URL}/client_info`);
+    console.log(res.data);
+    this.set_client_info(res.data);
+  }
+}

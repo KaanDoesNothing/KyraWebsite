@@ -1,0 +1,30 @@
+{
+  "name": "KiraWebsite",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/pwa": "^3.3.5",
+    "axios": "^0.21.1",
+    "buefy": "^0.9.8",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "nuxt-buefy": "^0.4.8",
+    "vuex-module-decorators": "^1.0.1"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/tailwindcss": "^4.2.0",
+    "fibers": "^5.0.0",
+    "postcss": "^8.3.5",
+    "sass": "^1.35.2",
+    "sass-loader": "^10.2.0"
+  }
+}
