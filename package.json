@@ -1,0 +1,27 @@
+{
+  "name": "vortexwebsite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "start": "npm run vite"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "axios": "^0.21.1",
+    "sass": "^1.38.2",
+    "tailwindcss": "^2.2.8",
+    "vue": "^3.2.6",
+    "vue-axios": "^3.2.5",
+    "vue-router": "^4.0.11",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "vite": "^2.5.1"
+  }
+}
