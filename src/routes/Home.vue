@@ -1,16 +1,26 @@
 <template>
-  <div class="flex justify-center my-20 flex-row items-center text-center mx-auto">
-    <div class="p-30 rounded-lg shadow-lg text-center w-64" v-if="clientInfo">
-      <img class="rounded-full" :src="clientInfo.displayAvatarURL">
-      <h1 class="font-bold text-2xl">{{clientInfo.username}}</h1>
-      <h1>
-        Hi there, I'm {{clientInfo.username}}, a multi purpose Discord bot
-        I'm currently in 400 guilds
-      </h1>
+  <div class="font-sans h-screen w-full flex flex-row justify-center items-center">
+    <div class="card w-96 mx-auto shadow-xl hover:shadow">
+      <img class="w-48 mx-auto rounded-full -mt-20 border-white" :src="clientInfo.displayAvatarURL">
+      <div class="text-center mt-2 text-3xl font-medium">{{ clientInfo.username }}</div>
+      <div class="px-6 text-center mt-2">
+        <p>
+          Hi there, I'm {{clientInfo.username}}, a multi purpose Discord bot
+          I'm currently in {{ stats.guilds }} guilds
+        </p>
+      </div>
+      <hr class="mt-6">
+      <div class="flex p-4">
+        <a href="/invite" class="w-1/2 text-center">
+          <span class="font-bold">Invite</span>
+        </a>
+      <div class="w-0 border border-gray-300">
 
-      <button>Invite me</button>
-      <br>
-      <button>Invite me</button>
+      </div>
+        <a href="/vote" class="w-1/2 text-center">
+          <span class="font-bold">Vote</span>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -33,8 +43,6 @@ export default {
   mounted() {
     this.fetchStats();
     this.fetchClientInfo();
-
-    // this.handleAuthentication();
   },
   methods: {
     async fetchStats () {

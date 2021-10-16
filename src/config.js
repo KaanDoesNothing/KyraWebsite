@@ -1,3 +1,3 @@
-export let api = import.meta.env.api || "http://localhost:3005/api";
+export let api = window.location.origin === "http://localhost:3000" ? "http://localhost:3005/api" : "api.vortex.kaanlikescoding.me";
 
 console.log(import.meta.env);
