@@ -6,6 +6,7 @@ const store = new Vuex.Store({
     },
     mutations: {
         setSession: (state, session) => {
+            console.log(session);
             state.session = session.user;
         }
     },

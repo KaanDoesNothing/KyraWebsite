@@ -4,7 +4,7 @@
       <label>Servers</label>
     </div>
     <div class="bg-gray-300 grid lg:grid-cols-3 gap-4 lg:justify-items-center">
-      <Card v-for="guild in guilds" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" :img="guild.iconURL ? `${guild.iconURL}?size=4096` : 'https://img.icons8.com/ios/500/FFFFFF/server.png'"></Card>
+      <Card v-for="guild in session.guilds" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" :img="guild.iconURL ? `${guild.iconURL}?size=4096` : 'https://img.icons8.com/ios/500/FFFFFF/server.png'"></Card>
     </div>
   </div>
 </template>
@@ -13,6 +13,7 @@
 import Card from "../../components/dashboard/Card.vue";
 import Axios from "axios";
 import {api} from "../../config";
+import {mapGetters} from "vuex";
 
 export default {
   components: {
@@ -36,6 +37,9 @@ export default {
         }
       })).data.guilds;
     }
+  },
+  computed: {
+    ...mapGetters(["session"])
   }
 }
 </script>
