@@ -5,6 +5,7 @@
     </div>
 
     <div class="flex flex-wrap items-center text-white mx-6">
+      <router-link to="/commands" class="bg-gray-700 rounded-full p-1 px-4 m-2">Commands</router-link>
       <a v-if="oauth_info && !session.id" :href="oauth_info.link" class="bg-gray-700 rounded-full p-1 px-4">Login</a>
       <router-link v-if="session.id" to="/dashboard" class="bg-gray-700 rounded-full p-1 px-4">Logged in as {{session.username}}</router-link>
     </div>
