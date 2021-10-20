@@ -35,6 +35,7 @@
 <script>
   import Axios from "axios";
   import {api} from "../../config";
+  import {handleGuildIcon} from "../../utils";
 
   export default {
     data() {
@@ -55,6 +56,8 @@
             "authorization": "Bearer " + token
           }
         })).data;
+
+        res.guild.iconURL = handleGuildIcon(res.guild);
 
         res.guild.owner = await this.fetchUser(res.guild.ownerId);
 

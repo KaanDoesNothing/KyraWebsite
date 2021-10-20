@@ -4,7 +4,7 @@
       <label>Servers</label>
     </div>
     <div class="bg-gray-300 grid lg:grid-cols-3 gap-4 lg:justify-items-center">
-      <Card v-for="guild in session.guilds.filter(guild => guild.isOwner || guild.permissions.includes('ADMINISTRATOR'))" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" :img="guild.iconURL ? `${guild.iconURL}?size=4096` : 'https://img.icons8.com/ios/500/FFFFFF/server.png'"></Card>
+      <Card v-for="guild in session.guilds?.filter(guild => guild.isOwner || guild.permissions?.includes('ADMINISTRATOR'))" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" :img="guild.iconURL ? `${guild.iconURL}?size=4096` : 'https://cdn.discordapp.com/embed/avatars/0.png'"></Card>
     </div>
   </div>
 </template>
