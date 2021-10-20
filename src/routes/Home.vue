@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     async fetchStats () {
-      let res = await fetch(`${api}/stats`).then(res => res.json());
+      let res = await fetch(`${api}/client/stats`).then(res => res.json());
       this.stats = res;
     },
     async fetchClientInfo () {
