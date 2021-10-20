@@ -8,19 +8,27 @@
       Navbar
     },
     mounted() {
-      this.handleAuthentication();
+      let token = localStorage.getItem("token");
+
+      if(token) {
+        this.fetchSession();
+      }else {
+        this.handleAuthentication();
+      }
     },
     methods: {
       async fetchSession () {
-      let token = localStorage.getItem("token");
+        let token = localStorage.getItem("token");
 
-      let res = await Axios.get(`${api}/auth/session`, {headers: {
-          "authorization": "Bearer " + token
-        }});
+        let res = await Axios.get(`${api}/auth/session`, {headers: {
+            "authorization": "Bearer " + token
+          }});
 
-        if(res.data.session) {
-          this.$store.commit("setSession", res.data.session);
-        }
+        console.log(res.data);
+
+          if(res.data.session) {
+            this.$store.commit("setSession", res.data.session);
+          }
       },
       async handleAuthentication () {
         let searchParams = new URLSearchParams(window.location.search);
