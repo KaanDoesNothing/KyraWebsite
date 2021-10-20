@@ -8,27 +8,27 @@ const routes = [
     {
         path: "/",
         name: "Home",
-        component: () => Home,
+        component: Home,
     },
     {
         path: "/test",
         name: "Test",
-        component: () => Home,
+        component: Home,
     },
     {
         path: "/dashboard",
         name: "Dashboard",
-        component: () => Dashboard,
+        component: Dashboard,
     },
     {
         path: "/dashboard/guilds",
         name: "Manage Guilds",
-        component: () => Guilds,
+        component: Guilds,
     },
     {
         path: "/dashboard/guild/:id",
         name: "Manage Guild",
-        component: () => Guild,
+        component: Guild,
     }
 ];
 
