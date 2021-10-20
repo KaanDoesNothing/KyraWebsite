@@ -1,10 +1,12 @@
 <template>
-  <div class="m-40 bg-gray-50 rounded shadow-md">
-    <div class="p-5 bg-gray-900 rounded text-center">
+  <div class="lg:m-40 bg-gray-50 rounded shadow-md">
+    <div class="p-5 bg-gray-900 lg:rounded text-center">
       <label>Servers</label>
     </div>
-    <div class=" bg-gray-300 grid justify-items-center grid-flow-col gap-4 grid-rows-1">
-      <Card v-for="guild in guilds" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" img="https://img.icons8.com/ios/500/FFFFFF/user--v1.png"></Card>
+    <div class="bg-gray-300 grid lg:grid-cols-3 gap-4 lg:justify-items-center">
+      <Card v-for="guild in guilds" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" :img="guild.iconURL ? `${guild.iconURL}?size=4096` : 'https://img.icons8.com/ios/500/FFFFFF/server.png'"></Card>
+      <Card v-for="guild in guilds" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" :img="guild.iconURL ? `${guild.iconURL}?size=4096` : 'https://img.icons8.com/ios/500/FFFFFF/server.png'"></Card>
+      <Card v-for="guild in guilds" :key="guild.id" :text="guild.name" :to="`/dashboard/guild/${guild.id}`" :img="guild.iconURL ? `${guild.iconURL}?size=4096` : 'https://img.icons8.com/ios/500/FFFFFF/server.png'"></Card>
     </div>
   </div>
 </template>
