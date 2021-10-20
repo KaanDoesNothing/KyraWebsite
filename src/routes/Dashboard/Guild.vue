@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap bg-transparent w-full h-screen">
-    <div class="w-2/12 bg-white rounded p-3 shadow-lg">
+    <div class="min-w-2/12 bg-white rounded p-3 shadow-lg">
       <div class="flex items-center space-x-4 p-2 mb-5">
         <img v-if="guild.id" class="h-16 rounded-full" :src="`${guild.iconURL}?size=2048`">
         <div>
@@ -50,7 +50,7 @@
       async fetchGuild() {
         let token = localStorage.getItem("token");
 
-        let res = (await Axios.post(`${api}/auth/getGuild`, {id: this.path}, {
+        let res = (await Axios.post(`${api}/dashboard/getGuild`, {id: this.path}, {
           headers: {
             "authorization": "Bearer " + token
           }
@@ -59,13 +59,11 @@
         res.guild.owner = await this.fetchUser(res.guild.ownerId);
 
         this.guild = res.guild;
-
-        return;
       },
       async fetchUser(id) {
         let token = localStorage.getItem("token");
 
-        return (await Axios.post(`${api}/auth/getUser`, {id}, {
+        return (await Axios.post(`${api}/dashboard/getUser`, {id}, {
           headers: {
             "authorization": "Bearer " + token
           },
