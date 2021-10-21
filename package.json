@@ -8,6 +8,7 @@
     "start": "npm run vite"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "axios": "^0.21.1",
     "sass": "^1.38.2",
     "tailwindcss": "^2.2.8",

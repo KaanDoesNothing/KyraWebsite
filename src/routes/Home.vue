@@ -1,5 +1,5 @@
 <template>
-  <div class="font-sans h-screen w-full flex flex-row justify-center items-center">
+  <div id="client_info" class="font-sans h-screen w-full flex flex-row justify-center items-center" v-if="clientInfo">
     <div class="card w-96 mx-auto shadow-xl hover:shadow">
       <img class="w-48 mx-auto rounded-full -mt-20 border-white" :src="clientInfo.displayAvatarURL">
       <div class="text-center mt-2 text-3xl font-medium">{{ clientInfo.username }}</div>
@@ -9,14 +9,16 @@
           I'm currently in {{ stats.guilds }} guilds
         </p>
       </div>
-      <hr class="mt-6">
+
+      <br>
+<!--      <hr class="mt-6">-->
       <div class="flex p-4">
         <a href="/invite" class="w-1/2 text-center">
           <span class="font-bold">Invite</span>
         </a>
-      <div class="w-0 border border-gray-300">
+<!--      <div class="w-0 border border-gray-300">-->
 
-      </div>
+<!--      </div>-->
         <a href="/vote" class="w-1/2 text-center">
           <span class="font-bold">Vote</span>
         </a>
@@ -34,10 +36,7 @@ export default {
   data() {
     return {
       stats: {},
-      clientInfo: {
-        username: "Vortex",
-        displayAvatarURL: "https://cdn.discordapp.com/icons/455388508031418370/b2bdc64bc69452a793f7c34fff097a4e.webp?size=2048"
-      }
+      clientInfo: undefined
     }
   },
   mounted() {
@@ -58,5 +57,8 @@ export default {
 </script>
 
 <style scoped>
-
+  #client_info {
+    animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+  }
 </style>
