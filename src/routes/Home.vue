@@ -1,6 +1,6 @@
 <template>
   <div id="client_info" class="font-sans h-screen w-full flex flex-row justify-center items-center" v-if="clientInfo">
-    <div class="card w-96 mx-auto shadow-xl hover:shadow">
+    <div class="card w-96 mx-auto shadow-xl hover:shadow bg-gray-800 rounded">
       <img class="w-48 mx-auto rounded-full -mt-20 border-white" :src="clientInfo.displayAvatarURL">
       <div class="text-center mt-2 text-3xl font-medium">{{ clientInfo.username }}</div>
       <div class="px-6 text-center mt-2">
