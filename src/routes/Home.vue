@@ -30,28 +30,26 @@
 <script>
 import Axios from "axios";
 import {api} from "../config";
+import {mapGetters} from "vuex";
 
 export default {
   name: "index",
   data() {
     return {
-      stats: {},
-      clientInfo: undefined
+      stats: {}
     }
   },
   mounted() {
     this.fetchStats();
-    this.fetchClientInfo();
   },
   methods: {
     async fetchStats () {
       let res = await fetch(`${api}/client/stats`).then(res => res.json());
       this.stats = res;
-    },
-    async fetchClientInfo () {
-      let res = await fetch(`${api}/client/info`).then(res => res.json());
-      this.clientInfo = res;
     }
+  },
+  computed: {
+    ...mapGetters(["clientInfo"])
   }
 }
 </script>

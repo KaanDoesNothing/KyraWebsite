@@ -1,7 +1,7 @@
 <template>
-  <nav class="flex flex-wrap items-center justify-between bg-gray-800 shadow-md">
+  <nav class="flex flex-wrap items-center justify-between bg-gray-800 shadow-md" v-if="clientInfo">
     <div class="flex flex-shrink-0 items-center text-white">
-      <router-link to="/" class="font-medium text-xl m-3">Vortex</router-link>
+      <router-link to="/" class="font-medium text-xl m-3">{{ clientInfo.username }}</router-link>
     </div>
 
     <div class="flex flex-wrap items-center text-white mx-6">
@@ -30,7 +30,7 @@ export default {
     this.oauth_info = authInfo;
   },
   computed: {
-    ...mapGetters(["session"])
+    ...mapGetters(["session", "clientInfo"])
   }
 }
 </script>

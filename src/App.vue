@@ -15,6 +15,8 @@
       }else {
         this.handleAuthentication();
       }
+
+      this.fetchClientInfo();
     },
     methods: {
       async fetchSession () {
@@ -43,6 +45,10 @@
             this.fetchSession();
             this.$router.push("/");
         }
+      },
+      async fetchClientInfo () {
+        let res = await fetch(`${api}/client/info`).then(res => res.json());
+        this.$store.commit("setClientInfo", res);
       }
     }
   }
